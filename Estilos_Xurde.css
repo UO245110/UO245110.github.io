@@ -124,7 +124,7 @@ h1,h2,h3,h4,h5,h6{
 
 /* ESPECIFICIDAD 001*/
 h1{
-    letter-spacing: 2em;
+    letter-spacing: 1em;
     border-radius: 25px;
 }
 
