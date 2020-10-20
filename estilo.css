@@ -1,13 +1,260 @@
+  /* ESTO ES EL LAYOUT */
+  
+  body {
+    margin: 40px;
+  }
+  
+  .sidebar {
+    grid-area: sidebar;
+  }
+  
+  .content {
+    grid-area: content;
+    position: relative;
+  }
+  
+  .header {
+    grid-area: header;
+  }
+  
+  .footer {
+    grid-area: footer;
+  }
+  
+  .wrapper {
+          display: grid;
+          grid-gap: 0.5em;
+          grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+          grid-template-areas:
+          "header  header  header"
+          "sidebar content content"
+          "footer  footer  footer";
+          color: #BAFFE1;
+      }
+  
+  
+  .box {
+    background-color: #baffe1e7;
+    border-radius: 0.7em;
+    padding: 2em;
+  }
+  
+  .header,
+  .footer {
+    background-color: #9ee8dde1;
+  }
+
+
+  
+/* CAMBIOS DE LA HOJA DE ESTILOS */
+
 body {
-    font: 400 15px Tahoma, sans-serif;
-    line-height: 1.8;
-    color: #818181;
-    background-color: #f6f6f6;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    line-height: 1em;
 }
-h1 {
-    background-color:rgb(166, 141, 173); 
-    color: #fff;
+
+/* Esto lo pongo para que se vea un poco más bonito */
+header,footer,aside{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    line-height: 1em;
+    color:black;
+}
+
+/* CAMBIO DE HOJA DE IMAGEN DE FONDO */
+
+/* TAREA 1 HEADERS */
+
+/* TODOS LOS SELECTORES TIENEN ESPECIFICIDAD 001 DE ESTA PARTE*/
+
+
+/* ESPECIFICIDAD 006*/
+h1,h2,h3,h4,h5,h6 { 
+    text-align: center;
+    font-size: 1.4em;
+    font-family: "Times New Roman", Times, serif;
+    line-height: 1em;
+    color:black
+}
+
+/* ESPECIFICIDAD 002*/
+h1,h6{
+    font-weight: bold;
+}
+
+/* ESPECIFICIDAD 003*/
+h1,h3,h5{
+    font-stretch: expanded;
+}
+
+/* ESPECIFICIDAD 003*/
+h2,h4,h6{
+    font-style: italic;
+}
+
+
+/* ESPECIFICIDAD 001*/
+h1{
+    font-size: 3em;
+}
+
+
+/* ESPECIFICIDAD 001*/
+h2{
+    font-size: 1em;
+}
+
+/* ESPECIFICIDAD 001*/
+h3{
+    font-size: 1.1em;
+}
+
+/* ESPECIFICIDAD 001*/
+h4{
+    font-size: 1.1em;
+}
+
+/* ESPECIFICIDAD 001*/
+h5{
+    font-size: 1.1em;
+}
+
+/* ESPECIFICIDAD 001*/
+h6{
+    font-size: 1.1em;
+}
+
+/* 2 TAREA DE DEFINICIÓN BÁSICA DE TEXTO */
+
+/* ESPECIFICIDAD 006*/
+p,li,ul,ol,td,th{
+    font-family: sans-serif;
+    font-size: 1em;
+    color: black;
+}
+
+/*ESPECIFICIDAD 011*/
+p::first-letter {
+    font-size: 1.6em;
+}
+
+
+/* 3 COLOR Y FONDO */
+/* ESPECIFICIDAD 001 */
+h1,h2,h3,h4,h5,h6{
+    background-color:  #9EE8DD;
+}
+
+/* ESPECIFICIDAD 001*/
+body {
+    color: black;
+    background-color:  #9EE8DD;
+}
+
+
+/* 4 IMAGEN DE FONDO */
+
+/* ESPECIFICIDAD 001*/
+body {
+    background-image: url("multimedia/Fondos.png");
+    background-repeat: repeat;
+    background-position: center;
+    background-attachment: scroll;
+    background-size: 100%;
+    background-color:white;
+}
+
+/* 5 PROPIEDADES DE LOS ENCABEZADOS PERO DE SU CAJA */
+/* ESPECIFICIDAD 006*/
+h1,h2,h3,h4,h5,h6{
+    padding: 12px;
+    text-align: center;
+    text-justify: inter-word;
     text-transform: uppercase;
-    padding: 100px 25px;
-    text-align: center;     
 }
+
+/* ESPECIFICIDAD 001*/
+h1{
+    letter-spacing: 0.25em;
+    border-radius: 25em;
+}
+
+/* 6 PROPIEDADES DE ENLACES */ 
+/* ESPECIFICIDAD 011*/
+a:link      {
+    color:grey; 
+    text-decoration: underline overline dotted turquoise;
+   }
+
+   
+/* ESPECIFICIDAD 011*/
+a:visited   {
+    color: black; 
+    text-decoration: underline  grey;
+   }
+
+
+/* 7 PROPIEDADES DE LISTAS Y TABLAS USANDO SELECTORES COMBINADOS */
+/* ESPECIFICIDAD 001*/
+table {
+    border: 2px  white;
+    background-color: #9ee8dde1;
+    text-align: center;
+    margin-left: 21%;
+    margin-right: 21%;
+    margin-top: 5%;
+
+}
+
+/* ESPECIFICIDAD 002*/
+th,td {
+    color: black;
+    font-size: 1.2em;
+}
+
+/* ESPECIFICIDAD 011*/
+tr:hover {
+    background-color: #baffe1e7;
+}
+
+
+/* List */
+ul {
+    counter-reset: index;  
+    padding: 0;
+    max-width: 300px;
+  }
+  
+  /* List element */
+  li {
+    counter-increment: index; 
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    box-sizing: border-box;
+  }
+  
+  
+  /* Element counter */
+  li::before {
+    font-size: 1.5rem;
+    text-align: right;
+    font-weight: bold;
+    min-width: 50px;
+    padding-right: 12px;
+    font-variant-numeric: tabular-nums;
+    align-self: flex-start;
+    background-image: linear-gradient(to bottom, aquamarine, orangered);
+    background-attachment: fixed;
+  }
+  
+  /* Como adecuar elementos multimedia */
+  
+  video{
+      max-width: 100%;
+  }
+
+  img{
+      max-width: 100%;
+  }
