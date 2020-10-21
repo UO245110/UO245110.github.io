@@ -1,4 +1,4 @@
-  /* ESTO ES EL LAYOUT */
+ /* ESTO ES EL LAYOUT */
   
   body {
     margin: 40px;
@@ -29,7 +29,6 @@
           "header  header  header"
           "sidebar content content"
           "footer  footer  footer";
-          color: #BAFFE1;
       }
   
   
@@ -256,5 +255,9 @@ ul {
   }
 
   img{
+      max-width: 100%;
+  }
+
+  audio{
       max-width: 100%;
   }
